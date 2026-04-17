@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Juego de la Vida de Conway</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+
+<body>
+    <!--Titulo-->
+    <h2 id="titulo">El Juego de la Vida de Conway</h2>
+
+    <div class="container">
+        <input type="radio" name="option" id="1" checked>
+        <label for="1">
+            <div class="tab-name">Inicio</div>
+            <div class="tab-content">
+                <!--Links internos-->
+                <div class="quick-nav">
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Juego de la Vida de Conway</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+                    <a href="#proposito">Propósito</a> |
+                    <a href="#origen">Origen del Juego</a> |
+                    <a href="#filosofia">Filosofía</a>
+                </div>
+
+                <h3 id="proposito">¿De qué trata esta página?</h3>
+                <p>Esta página tratará de explicar el Juego de la Vida de Conway mediante distintas pestañas, cumpliendo
+                    los requisitos pedidos por el maestro.</p><br>
+
+                <h3 id="origen">El genio detrás: John Horton Conway</h3>
+                <p>John Conway fue un matemático británico que revolucionó el campo de las matemáticas recreativas.
+                    Aunque hizo contribuciones serias en teoría de grupos y números surreales, siempre será recordado
+                    por este autómata celular creado en 1970.</p>
+
+                <h3 id="filosofia">¿Qué es exactamente y por qué este tema?</h3>
+                <p>El Juego de la Vida de Conway no es exactamente un videojuego, sino una simulación matemática
+                    infinita en la cual, cumpliendo ciertas reglas, podríamos crear teóricamente cualquier cosa.
+
+                    Creé esta página con este tema porque, a lo largo de los años, siempre se me han hecho muy
+                    interesantes
+                    las matemáticas. El cómo funciona este "juego" son cosas tan interesantes que desearía compartir con
+                    cualquiera que lea esta página.
+                </p>
+
+                <h3>¿Por qué el diseño de la página es distinto?</h3>
+                <p>Aunque este diseño no creo que llegue a cumplir con todos los requisitos necesarios, quería hacerla
+                    de un
+                    estilo diferente, uno un poco más único, y aunque es mi primera vez haciendo este estilo, espero que
+                    sea del
+                    agrado del lector interesado en la misma.
+                </p>
+            </div>
+        </label>
+
+        <input type="radio" name="option" id="2">
+        <label for="2">
+            <div class="tab-name">Acerca del juego</div>
+            <div class="tab-content">
+                <div class="quick-nav">
+                    <a href="#definicion">Definición</a> |
+                    <a href="#reglas-mundo">El Mundo</a> |
+                    <a href="#reglas-celulas">Reglas</a> |
+                    <a href="#variantes">Variantes</a>
+                </div>
+
+                <h3 id="definicion">Explicación detallada</h3>
+                <p>Si no estás interesado en leer la explicación técnica, puedes ver el video al final de esta sección
+                    que lo explica de forma muy entretenida.</p>
+
+                <p>El Juego de la Vida (o Conway's Game of Life) no es un videojuego de ganar o perder.
+                    Es lo que los matemáticos llaman un autómata celular. Imagina que es un ecosistema que vive en una
+                    cuadrícula
+                    y que evoluciona por sí solo basándose en unas pocas reglas simples.</p>
+
+                <h3 id="reglas-mundo">Mundo del juego</h3>
+
+                <ul>
+                    <li>Imagina que el mundo es una hoja de papel cuadriculado infinita.</li>
+                </ul>
+                <p>[]][][][][][][][][][][][][][][][][][][][][][][][][][]</p>
+
+                <ul>
+                    <li>Cada cuadrado es una celda.</li>
+                </ul>
+                <p>[][][][][][][][][][][][][][][][][][][][][][][][][][][]</p>
+
+                <ul>
+                    <li>Una celda puede estar en uno de dos estados: Viva (llena de color) [X] o Muerta (vacía) [ ].
+                    </li>
+                </ul>
+                <p>[][][][][][][][][][][][][][][][][][][][][][][][][][][]</p>
+                <ul>
+                    <li> Cada celda tiene 8 vecinas (las que la rodean en horizontal, vertical y diagonal).</li>
+                </ul>
+                <p>Estas serían las reglas del mundo, muy sencillas, pero de esta sencillez vienen cosas
+                    <strong>increíbles</strong>.
+                </p>
+
+                <h3 id="reglas-celulas">Reglas de las Células</h3>
+                <p>El juego avanza por "turnos" o generaciones.
+                    En cada paso, todas las celdas deciden si vivirán o morirán
+                    en el siguiente turno aplicando estas cuatro reglas:
+                <ol>
+                    <li><strong>Muerte por Soledad</strong>: Si una celda viva tiene menos de 2 vecinas vivas, muere.
+                        <br>(Es como si se sintiera aislada).
+                    </li><br>
+
+                    <li><strong>Supervivencia</strong>: Si una celda viva tiene 2 o 3 vecinas vivas, sigue viva en el
+                        siguiente turno.</li><br>
+
+                    <li><strong>Muerte por Sobrepoblación</strong>: Si una celda viva tiene más de 3 vecinas vivas,
+                        muere. (Demasiada competencia por los recursos).</li><br>
+
+                    <li><strong>Nacimiento</strong>: Si una celda muerta tiene exactamente 3 vecinas vivas, "nace" (se
+                        vuelve viva).</li>
+                </ol>
+                </p>
+
+                <h3 id="variantes">Variantes y Curiosidades</h3>
+                <p>Existen variantes como <strong>HighLife</strong> o <strong>Seeds</strong> que cambian solo un número
+                    en las reglas, resultando en mundos totalmente caóticos o explosivos. El Juego de la Vida original
+                    es "Turing Completo", lo que significa que puedes construir una computadora funcional dentro del
+                    juego usando solo estas reglas.</p>
+
+                <iframe src="EL JUEGO DE LA VIDA DE CONWAY [2ssnMkJFqbA].webm" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </label>
+
+        <input type="radio" name="option" id="3">
+        <label for="3">
+            <div class="tab-name">Patrones y creaciones</div>
+            <div class="tab-content">
+                <p>Ya que más o menos entiendes cómo funcionan las reglas del juego, empieza lo interesante.</p>
+                <h3>Patrones</h3>
+                <p>En el juego podemos crear múltiples patrones que, por cómo funcionan las reglas,
+                    se vuelven creaciones increíbles. Me gustaría empezar por un patrón básico
+                    que sería:</p>
+
+                <h2>Vidas estáticas</h2>
+                <p>Son configuraciones que se mantienen inalterables a lo largo del tiempo.
+                    Las células vivas tienen suficientes vecinas para sobrevivir y ninguna
+                    célula muerta cumple las condiciones para revivir,
+                    por lo que permanecen estables para siempre.</p>
+
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Game_of_life_block.png/100px-Game_of_life_block.png"
+                    alt="Bloque" title="Bloque">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Game_of_life_beehive.png/100px-Game_of_life_beehive.png"
+                    alt="Colmena" title="Colmena">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Game_of_life_loaf.png/100px-Game_of_life_loaf.png"
+                    alt="Hogaza" title="Hogaza">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Game_of_life_boat.png/100px-Game_of_life_boat.png"
+                    alt="Barco" title="Barco">
+
+                <h2>Naves espaciales (Spaceships)</h2>
+                <p>Son configuraciones iniciales pequeñas que, sorprendentemente, tardan mucho tiempo en estabilizarse o
+                    desaparecer,
+                    pasando por una gran cantidad de generaciones antes de alcanzar un estado fijo o disolverse.</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Game_of_life_animated_LWSS.gif"
+                    alt="Nave espacial ligera" height="150">
+
+
+                <h2>Gliders (Deslizadores)</h2>
+                <p>Los "Gliders" o "Deslizadores" son la nave espacial más simple y conocida en el Juego de la Vida. Se
+                    mueven diagonalmente a través de la cuadrícula, cambiando su forma en un ciclo de cuatro
+                    generaciones. Son increíblemente importantes porque pueden interactuar entre sí y con otros
+                    patrones, siendo los "bloques de construcción" fundamentales para crear estructuras mucho más
+                    complejas, como computadoras o generadores de nuevos gliders.</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Game_of_life_animated_glider.gif"
+                    alt="Glider moviéndose" height="100">
+                <br>
+                <br>
+
+                <h2>Osciladores</h2>
+                <p>Los osciladores son patrones que no se mueven, pero cambian su forma cíclicamente, volviendo a su
+                    configuración original después de un número fijo de generaciones. Son fascinantes porque muestran
+                    cómo la vida puede mantenerse en un estado dinámico sin necesidad de expandirse o morir por
+                    completo. Ejemplos comunes incluyen el "Blinker" (parpadeante), que alterna entre una línea
+                    horizontal y vertical, y el "Toad" (sapo).</p>
+                <div style="display: flex; gap: 10px; justify-content: center;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Game_of_life_blinker.gif"
+                        alt="Blinker" height="80">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Game_of_life_toad.gif" alt="Toad"
+                        height="80">
+                </div>
+                <br>
+
+                <h2>El Cañón de Planeadores (Gosper Glider Gun)</h2>
+                <p>Este es uno de los patrones más famosos. Fue el primer patrón descubierto que crece infinitamente,
+                    creando un nuevo "Glider" cada 30 generaciones. Este descubrimiento demostró que el Juego de la Vida
+                    podía ser usado para construir sistemas complejos de computación.</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Game_of_life_animated_glider_gun.gif"
+                    alt="Cañón de Gliders" height="200">
+                <br>
+                <br>
+                <p>¿Quieres experimentar con estos patrones tú mismo? ¡Prueba el simulador online!</p>
+                <a href="https://playgameoflife.com/" target="_blank" class="btn-link">Jugar al Juego de la Vida</a>
+                <br>
+                <br>
+            </div>
+        </label>
+
+        <input type="radio" name="option" id="4">
+        <label for="4">
+            <div class="tab-name">¿Quién soy?</div>
+            <div class="tab-content">
+                <h3>Aquí explicaré un poco sobre mí y quién voy a ser</h3>
+                <p>Mi nombre es Ángel Miguel Corniel Torres. Me gusta la comida en general, la música
+                    de varios idiomas y culturas, dormir y los videojuegos que representen un reto
+                    o en los que sientas que progresas constantemente. Aunque no sea muy inteligente,
+                    hago lo que puedo para sobrellevar mis debilidades y poco a poco ir creciendo.
+                    Se me hace difícil concentrarme en las cosas importantes (no sé si sea algún problema tipo TDAH),
+                    pero recientemente el politécnico
+                    me está obligando con esto, aunque sea de una forma en la que se me complique tanto.
+                    No soy muy bueno relacionándome con las personas de manera más profunda y, aunque eso pueda ser
+                    un problema en algún futuro, actualmente estoy medianamente cómodo con eso, ya que sé que las
+                    personas
+                    con las que sí me llego a relacionar más cercanamente son personas que destacan y aportan grandes
+                    cosas a mi vida.
+                    Ciertamente no tengo mucha idea de qué debería decir aquí, ya que no sé explicar de buena manera mi
+                    personalidad.
+                    Siempre trato de ser educado y no faltarle el respeto a nadie, y siempre busco divertirme y, sobre
+                    todo, ser lo
+                    más puro posible; con esto quiero decir, no mostrarle una máscara a nadie sobre alguien que no soy.
+                </p>
+                <h3>¿Cómo me veo en el futuro?</h3>
+                <p>No pienso mucho en el futuro, ya que no tengo mucha idea acerca de lo que quiero estudiar ni dónde lo
+                    voy a hacer.
+                    Realmente me gustaría mejorar en muchas cosas que me aporten algo en la vida, conseguir un trabajo
+                    en el que no se
+                    sienta que esté trabajando y tener a alguien que amar por el resto de mi vida, aunque aún soy muy
+                    joven para eso.
+                    Y algo que sí me gustaría hacer es viajar mucho y mudarme a algún país para conocer más lugares.
+                </p>
+            </div>
+        </label>
+        
+        <input type="radio" name="option" id="5">
+        <label for="5">
+            <div class="tab-name">Contacto</div>
+            <div class="tab-content">
+                <h3>¡Ponte en contacto conmigo!</h3>
+                <p>Si tienes alguna duda sobre el Juego de la Vida o simplemente quieres saludar, rellena el siguiente
+                    formulario.</p>
+
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Tu correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    </div>
+                    <button type="submit">Enviar mensaje</button>
+                </form>
+                <div id="form-response" class="form-response"></div>
+            </div>
+        </label>
+    </div>
+    <script src="script/script.js"></script>
+</body>
+</html>

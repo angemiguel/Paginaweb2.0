@@ -1,0 +1,214 @@
+/* --- CONFIGURACIÓN BASE Y FONDO TEMÁTICO --- */
+html {
+    scroll-behavior: smooth; /* Permite que los links internos bajen suavemente */
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0; /* Corregido: evita scroll horizontal innecesario */
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    
+    /* El fondo de cuadrícula estilo Conway */
+    background-color: #15161c; /* Un tono oscuro casi negro */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 25px 25px; /* Tamaño de las células */
+    background-position: center top;
+}
+
+/* Título Principal */
+#titulo { 
+    color: #cdf2ff; /* Usamos el mismo celeste para armonizar */
+    margin-bottom: 30px; 
+    font-size: 2.2rem;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Hace que resalte sobre la cuadrícula */
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.container {
+    display: flex;
+    position: relative;
+    width: 90%; 
+    max-width: 850px; 
+    margin-top: 10px;
+}
+
+/* Rellena los espacios con los label */
+.container label {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="radio"] { display: none; }
+
+/* --- DISEÑO DE LAS PESTAÑAS (TABS) --- */
+.tab-name {
+    color: #aaa; /* Gris claro para las inactivas */
+    height: 45px; 
+    font-size: 14px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; /* Un poco más de espacio luce más moderno */
+    background: rgba(255, 255, 255, 0.05); /* Efecto cristal sutil */
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transición más fluida */
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+label:last-of-type .tab-name {
+    border-right: none;
+}
+
+/* Efecto al pasar el mouse por encima de pestañas inactivas */
+.tab-name:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* PESTAÑA ACTIVA */
+input:checked + label .tab-name {
+    background: #420D4B; 
+    color: #cdf2ff;
+    font-weight: 800;
+    box-shadow: 0 -4px 10px rgba(66, 13, 75, 0.3); /* Brillo superior */
+}
+
+/* --- CONTENIDO DE LAS PESTAÑAS --- */
+.tab-content {
+    position: absolute;
+    top: 45px; /* Sincronizado con el height de tab-name */
+    left: 0;
+    width: 100%;
+    background: #faf9fc; /* Blanco ligeramente matizado hacia el púrpura */
+    color: #2c2d35; /* Gris muy oscuro, mejor para leer que el negro puro */
+    padding: 40px;
+    min-height: 300px; /* Asegura un buen tamaño inicial */
+    display: flex;
+    flex-direction: column;
+    align-items: center;     
+    text-align: center;      
+    font-size: 16px; 
+    line-height: 1.6; /* Mayor interlineado para lectura más cómoda */
+    box-sizing: border-box;
+    border-radius: 0 0 12px 12px; /* Bordes un poco más suaves */
+    
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(15px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4); /* Sombra más profunda y difuminada */
+}
+
+input:checked + label .tab-content {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    z-index: 5;
+}
+
+/* --- NAVEGACIÓN RÁPIDA (ÍNDICE) --- */
+.quick-nav {
+    background: rgba(66, 13, 75, 0.05);
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.quick-nav a {
+    color: #420D4B;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+.quick-nav a:hover {
+    color: #5a1166;
+    text-decoration: underline;
+}
+
+#h3-1 { 
+    margin-top: 0; 
+    color: #420D4B; /* Títulos internos con el color de acento */
+}
+
+/* --- ESTILOS DEL FORMULARIO DE CONTACTO --- */
+.contact-form {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px; /* Un poco más de espacio interno */
+    background: #fff;
+    border: 2px solid #e1dfec; /* Borde más visible */
+    border-radius: 8px; /* Bordes más redondeados */
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #420D4B;
+    box-shadow: 0 0 0 3px rgba(66, 13, 75, 0.15); /* Efecto de resplandor al enfocar */
+}
+
+.contact-form button {
+    background-color: #420D4B;
+    color: #cdf2ff; /* Usa el color de acento en el texto del botón */
+    padding: 14px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #5a1166;
+    transform: translateY(-2px); /* Pequeño salto al pasar el mouse */
+    box-shadow: 0 5px 15px rgba(90, 17, 102, 0.4);
+}
+
+/* --- ESTILO PARA EL BOTÓN DE ENLACE EXTERNO --- */
+.btn-link {
+    display: inline-block;
+    background-color: #420D4B;
+    color: #cdf2ff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-link:hover {
+    background-color: #5a1166;
+    box-shadow: 0 5px 15px rgba(90, 17, 102, 0.4);
+    transform: scale(1.05);
+}
